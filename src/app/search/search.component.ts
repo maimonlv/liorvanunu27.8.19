@@ -72,8 +72,4 @@ export class SearchComponent implements OnInit {
 
   }
 
-  displayFn(selectedCity) {
-    return selectedCity;
-  }
-
 }

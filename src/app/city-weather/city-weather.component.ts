@@ -272,6 +272,8 @@ export class CityWeatherComponent implements OnInit, OnChanges {
 
   constructor(private weatherService: WeatherService,
               private listService: FavoritesListService) {
+                this.selectedCityData = null;
+                this.cityWeather = new WeatherCityInfo();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -301,26 +303,31 @@ export class CityWeatherComponent implements OnInit, OnChanges {
 
   private getFirstCityData() {
     console.log('getFirstCityData: ' + this.selectedCity);
-    // this.weatherService.getCityDataByCityName(this.selectedCity).subscribe(data => {
-    //   this.checkData(data);
+    this.weatherService.getCityDataByCityName(this.selectedCity).subscribe(data => {
+      console.log('getFirstCityData:');
+      console.log(data);
+      this.checkData(JSON.parse(JSON.stringify(data)));
 
-    //   if (this.selectedCityData === null) {
-    //     console.log('No Cities Array');
-    //   } else { /********************may be not [0]************************** */
-    //     console.log('selectedCityInfo:');
-    //     console.log(this.selectedCityData);
-    //     this.createCityWeather(this.selectedCityData);
-    //   }/********************may be not [0]************************** */
-    // });
+      if (this.selectedCityData === null) {
+        console.log('No Cities Array');
+      } else { /********************may be not [0]************************** */
+        // console.log('selectedCityData:');
+        // console.log(this.selectedCityData);
+        this.createCityWeather(this.selectedCityData);
+      }/********************may be not [0]************************** */
+    });
 
-    this.checkData(this.data1);
-    this.createCityWeather(this.selectedCityData);
+    // this.checkData(this.data1);
+    // this.createCityWeather(this.selectedCityData);
   }
 
   private printFirstCityDataToConsole() {
+    if (this.cityWeather && this.cityWeather.cityKey &&
+      this.cityWeather.cityName && this.cityWeather.country) {
     console.log(this.cityWeather.cityKey);
     console.log(this.cityWeather.cityName);
     console.log(this.cityWeather.country);
+    }
   }
 
   private getDailyForecast() {
@@ -341,21 +348,23 @@ export class CityWeatherComponent implements OnInit, OnChanges {
   }
 
   private getFiveDayForecast() {
+    if (this.cityWeather && this.cityWeather.cityKey) {
     console.log('getFiveDayForecast: cityKey: ' + this.cityWeather.cityKey);
-    //  this.weatherService.getFiveDayCityWeatherByLocationKey(this.cityWeather.cityKey).subscribe(data => {
-    //   this.checkData(data);
 
-    //   if (this.selectedCityData === null) {
-    //     console.log('No Cities Array');
-    //   } else {
-    //     console.log('getDailyForecast: selectedCityInfo: ');
-    //     console.log(this.selectedCityData);
-    //     this.addDataCityWeather(this.selectedCityData);
-    //   }
-    // });
-    this.checkData(this.data3);
-    this.addDataCityWeather(this.selectedCityData);
+    this.weatherService.getFiveDayCityWeatherByLocationKey(this.cityWeather.cityKey).subscribe(data => {
+      this.checkData(JSON.parse(JSON.stringify(data)));
+      if (this.selectedCityData === null) {
+        console.log('No Cities Array');
+      } else {
+        console.log('getDailyForecast: selectedCityInfo: ');
+        console.log(this.selectedCityData);
+        this.addDataCityWeather(this.selectedCityData);
+      }
+    });
+    // this.checkData(this.data3);
+    // this.addDataCityWeather(this.selectedCityData);
   }
+}
 
   private checkData(data: JSON) {
     console.log('checkData: data1: ' + JSON.stringify(data));
@@ -394,10 +403,12 @@ export class CityWeatherComponent implements OnInit, OnChanges {
 
   private createCityWeather(data: any) {
 
-    this.cityWeather = new WeatherCityInfo();
-    this.cityWeather.cityKey = data.Key.toString();
-    this.cityWeather.cityName = data.LocalizedName.toString();
-    this.cityWeather.country = data.Country.LocalizedName.toString();
+    // this.cityWeather = new WeatherCityInfo();
+    console.log('createCityWeather:');
+    console.log(data);
+    this.cityWeather.cityKey = data[0].Key;
+    this.cityWeather.cityName = data[0].LocalizedName;
+    this.cityWeather.country = data[0].Country.LocalizedName;
 
   }
 

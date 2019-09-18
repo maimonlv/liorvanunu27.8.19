@@ -12,10 +12,10 @@ export class WeatherCityInfo implements OnInit {
 
   constructor() {
       this.daysForecasts = new Array<DailyForecast>();
-      this.cityKey = null;
-      this.cityName = null;
-      this.info = null;
-      this.country = null;
+      this.cityKey = '';
+      this.cityName = '';
+      this.info = '';
+      this.country = '';
       this.favorited = false;
   }
 

@@ -3,7 +3,7 @@
 
 <div class="d-flex justify-content-around">
     <div class="card card-title blockquote text-primary text-center border-primary mb-3" style="width: 10%;">
-        <div *ngIf="cityWeather.daysForecasts">
+        <div *ngIf="cityWeather && cityWeather.daysForecasts && cityWeather.daysForecasts[0]">
             <div class="d-flex justify-content-around">
                 <div>
                     {{cityWeather.daysForecasts[0].dayIconNumber}}
