@@ -1,0 +1,166 @@
+/********************************************************************/
+request:
+/********************************************************************/
+GET /locations/v1/cities/search?apikey=m0z2hXM8PFEkLD0ilGDm33d1tcZjhx2a&q=modiin HTTP/1.1
+/********************************************************************/
+
+curl -X GET "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=m0z2hXM8PFEkLD0ilGDm33d1tcZjhx2a&q=modiin"
+/********************************************************************/
+
+
+Accept:
+*/*
+Accept-Encoding:
+gzip
+Accept-Language:
+he-IL
+Host:
+dataservice.accuweather.com
+Sec-Fetch-Mode:
+cors
+Sec-Fetch-Site:
+cross-site
+User-Agent:
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML
+X-Forwarded-For:
+77.127.106.217
+X-Forwarded-Port:
+443
+X-Forwarded-Proto:
+https
+
+
+
+/********************************************************************/
+response:
+/********************************************************************/
+HTTP/1.1 200 OK
+Accept:
+*/*
+Accept-Encoding:
+gzip
+Accept-Language:
+he-IL
+Access-Control-Allow-Headers:
+origin
+Access-Control-Allow-Methods:
+GET
+Access-Control-Allow-Origin:
+*
+Access-Control-Max-Age:
+3628800
+Cache-Control:
+public
+Connection:
+keep-alive
+Content-Encoding:
+gzip
+Content-Type:
+application/json; charset=utf-8
+Date:
+Sat, 31 Aug 2019 01:27:45 GMT
+Expires:
+Sun, 01 Sep 2019 01:27:45 GMT
+Host:
+api.accuweather.com
+Origin:
+https://developer.accuweather.com
+RateLimit-Limit:
+50
+RateLimit-Remaining:
+35
+Referer:
+https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities/search
+Sec-Fetch-Mode:
+cors
+Sec-Fetch-Site:
+cross-site
+Server:
+Microsoft-IIS/10.0
+Transfer-Encoding:
+chunked
+User-Agent:
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML
+Vary:
+Accept-Encoding
+X-Forwarded-For:
+77.127.106.217
+X-Forwarded-Port:
+443
+X-Forwarded-Proto:
+https
+
+/********************************************************************/
+JSON:
+/********************************************************************/
+[
+  {
+    "Version": 1,
+    "Key": "4-212597_1_AL",
+    "Type": "City",
+    "Rank": 75,
+    "LocalizedName": "Modiin",
+    "EnglishName": "Maccabim",
+    "PrimaryPostalCode": "",
+    "Region": {
+      "ID": "MEA",
+      "LocalizedName": "Middle East",
+      "EnglishName": "Middle East"
+    },
+    "Country": {
+      "ID": "IL",
+      "LocalizedName": "Israel",
+      "EnglishName": "Israel"
+    },
+    "AdministrativeArea": {
+      "ID": "M",
+      "LocalizedName": "Central District",
+      "EnglishName": "Central District",
+      "Level": 1,
+      "LocalizedType": "District",
+      "EnglishType": "District",
+      "CountryID": "IL"
+    },
+    "TimeZone": {
+      "Code": "IDT",
+      "Name": "Asia/Jerusalem",
+      "GmtOffset": 3,
+      "IsDaylightSaving": true,
+      "NextOffsetChange": "2019-10-26T23:00:00Z"
+    },
+    "GeoPosition": {
+      "Latitude": 31.895,
+      "Longitude": 35.018,
+      "Elevation": {
+        "Metric": {
+          "Value": 243,
+          "Unit": "m",
+          "UnitType": 5
+        },
+        "Imperial": {
+          "Value": 797,
+          "Unit": "ft",
+          "UnitType": 0
+        }
+      }
+    },
+    "IsAlias": true,
+    "ParentCity": {
+      "Key": "212597",
+      "LocalizedName": "Maccabim",
+      "EnglishName": "Maccabim"
+    },
+    "SupplementalAdminAreas": [],
+    "DataSets": [
+      "Alerts"
+    ]
+  }
+]
+
+/********************************************************************/
+Response Parameters:
+/********************************************************************/
+
+
+
+/********************************************************************/

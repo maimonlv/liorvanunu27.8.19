@@ -1,0 +1,252 @@
+/********************************************************************/
+request:
+/********************************************************************/
+GET /forecasts/v1/daily/5day/4-212597_1_AL?apikey=m0z2hXM8PFEkLD0ilGDm33d1tcZjhx2a&metric=true HTTP/1.1
+
+
+
+
+/********************************************************************/
+cURL:
+/********************************************************************/
+curl -X GET "http://dataservice.accuweather.com/forecasts/v1/daily/5day/4-212597_1_AL?apikey=m0z2hXM8PFEkLD0ilGDm33d1tcZjhx2a&metric=true"
+
+
+/********************************************************************/
+response:
+/********************************************************************/
+HTTP/1.1 200 OK
+Accept:
+*/*
+Accept-Encoding:
+gzip
+Accept-Language:
+he-IL
+Access-Control-Allow-Headers:
+origin
+Access-Control-Allow-Methods:
+GET
+Access-Control-Allow-Origin:
+*
+Access-Control-Max-Age:
+3628800
+Cache-Control:
+public
+Connection:
+keep-alive
+Content-Encoding:
+gzip
+Content-Type:
+application/json; charset=utf-8
+Date:
+Sun, 01 Sep 2019 21:11:13 GMT
+Expires:
+Sun, 01 Sep 2019 21:31:13 GMT
+Host:
+api.accuweather.com
+Origin:
+https://developer.accuweather.com
+RateLimit-Limit:
+50
+RateLimit-Remaining:
+47
+Referer:
+https://developer.accuweather.com/accuweather-forecast-api/apis/get/forecasts/v1/daily/5day/%7BlocationKey%7D
+Sec-Fetch-Mode:
+cors
+Sec-Fetch-Site:
+cross-site
+Server:
+Microsoft-IIS/10.0
+Transfer-Encoding:
+chunked
+User-Agent:
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML
+Vary:
+Accept-Encoding
+X-Forwarded-For:
+77.125.73.192
+X-Forwarded-Port:
+443
+X-Forwarded-Proto:
+https
+
+
+/********************************************************************/
+JSON:
+/********************************************************************/
+{
+  "Headline": {
+    "EffectiveDate": "2019-09-01T20:00:00+03:00",
+    "EffectiveEpochDate": 1567357200,
+    "Severity": 7,
+    "Text": "Humid Sunday night",
+    "Category": "humidity",
+    "EndDate": "2019-09-02T08:00:00+03:00",
+    "EndEpochDate": 1567400400,
+    "MobileLink": "http://m.accuweather.com/en/il/maccabim/4-212597_1_al/extended-weather-forecast/4-212597_1_al?unit=c&lang=en-us",
+    "Link": "http://www.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?unit=c&lang=en-us"
+  },
+  "DailyForecasts": [
+    {
+      "Date": "2019-09-01T07:00:00+03:00",
+      "EpochDate": 1567310400,
+      "Temperature": {
+        "Minimum": {
+          "Value": 23.1,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 33.5,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 1,
+        "IconPhrase": "Sunny",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 33,
+        "IconPhrase": "Clear",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?unit=c&lang=en-us"
+    },
+    {
+      "Date": "2019-09-02T07:00:00+03:00",
+      "EpochDate": 1567396800,
+      "Temperature": {
+        "Minimum": {
+          "Value": 20.7,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 32.9,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 1,
+        "IconPhrase": "Sunny",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Partly cloudy",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?day=1&unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?day=1&unit=c&lang=en-us"
+    },
+    {
+      "Date": "2019-09-03T07:00:00+03:00",
+      "EpochDate": 1567483200,
+      "Temperature": {
+        "Minimum": {
+          "Value": 21.1,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 31.1,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 2,
+        "IconPhrase": "Mostly sunny",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Partly cloudy",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?day=2&unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?day=2&unit=c&lang=en-us"
+    },
+    {
+      "Date": "2019-09-04T07:00:00+03:00",
+      "EpochDate": 1567569600,
+      "Temperature": {
+        "Minimum": {
+          "Value": 21.9,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 30.4,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 2,
+        "IconPhrase": "Mostly sunny",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 38,
+        "IconPhrase": "Mostly cloudy",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?day=3&unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?day=3&unit=c&lang=en-us"
+    },
+    {
+      "Date": "2019-09-05T07:00:00+03:00",
+      "EpochDate": 1567656000,
+      "Temperature": {
+        "Minimum": {
+          "Value": 20.5,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 30.8,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 2,
+        "IconPhrase": "Mostly sunny",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 34,
+        "IconPhrase": "Mostly clear",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?day=4&unit=c&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/maccabim/4-212597_1_al/daily-weather-forecast/4-212597_1_al?day=4&unit=c&lang=en-us"
+    }
+  ]
+}
+
+/********************************************************************/
+Response Parameters:
+/********************************************************************/
+

@@ -1,0 +1,22 @@
+<div>
+    <div class="bg-light d-flex justify-content-center">
+        <div>
+            <h5>Search City:</h5>
+        </div>
+        <mat-form-field>
+            <input matInput #selectedCity (keyup.enter)="citySearchInfo(selectedCity.value)" (blur)="citySearchInfo(selectedCity.value);" placeholder="Tel Aviv" aria-label="Search" [matAutocomplete]="auto" [formControl]="searchCitiesCtrl">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngIf="isLoading" class="is-loading ">Loading...</mat-option>
+                <ng-container *ngIf="!isLoading">
+                    <mat-option *ngFor="let city of filteredCities" [value]="city.LocalizedName">
+                        <span><b>{{city.LocalizedName}} , {{city.Country.LocalizedName}}</b></span>
+                    </mat-option>
+                </ng-container>
+            </mat-autocomplete>
+        </mat-form-field>
+        <br>
+        <ng-container *ngIf="errorMsg">
+            {{errorMsg}}
+        </ng-container>
+    </div>
+</div>

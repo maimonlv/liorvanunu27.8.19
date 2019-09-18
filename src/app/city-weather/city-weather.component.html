@@ -1,0 +1,57 @@
+<!-- <div>In cityWeather, Selected City Is: {{selectedCity}}</div>
+<br> -->
+
+<div class="d-flex justify-content-around">
+    <div class="card card-title blockquote text-primary text-center border-primary mb-3" style="width: 10%;">
+        <div *ngIf="cityWeather.daysForecasts">
+            <div class="d-flex justify-content-around">
+                <div>
+                    {{cityWeather.daysForecasts[0].dayIconNumber}}
+                </div>
+                <div>
+                    {{cityWeather.cityName}}
+                    <br> {{cityWeather.daysForecasts[0].maxTemperature}}{{cityWeather.daysForecasts[0].temperatureUnits}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" [ngClass]="{
+        'btn-outline-primary': !cityWeather.favorited,
+        'btn-primary': cityWeather.favorited }" (click)="toggleFavorite()">
+        Add To Favorites
+      </button>
+    </div>
+</div>
+
+
+<div class="d-flex flex-container justify-content-center">
+    <div>
+        <h2>{{cityWeather.info}}</h2>
+    </div>
+</div>
+<div class="d-flex flex-container justify-content-center">
+    <div class="card-deck">
+        <div *ngFor="let dailyForecast of cityWeather.daysForecasts">
+            <div *ngIf="cityWeather.daysForecasts">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                                <div class="card-header card-title date">{{ dailyForecast.date | date:'EEEE' }} {{ dailyForecast.date | date:'d/M' }}</div>
+                                <div class="card-body text-primary">
+                                    <h5 class="card-title blockquote text-center">Day:</h5>
+                                    <h5 class="card-title blockquote text-center">{{dailyForecast.dayIconNumber}} {{dailyForecast.maxTemperature}}{{dailyForecast.temperatureUnits}}</h5>
+                                    <p class="card-title blockquote text-center">{{dailyForecast.dayIconPhrase}}</p>
+                                    <p class="card-title blockquote text-center">Night:</p>
+                                    <h5 class="card-title blockquote text-center">{{dailyForecast.nightIconNumber}} {{dailyForecast.minTemperature}}{{dailyForecast.temperatureUnits}}</h5>
+                                    <p class="card-title blockquote text-center">{{dailyForecast.nightIconPhrase}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
